@@ -19,6 +19,42 @@
     .divider-line{flex:1;height:1px;background:#C9B99A}
     .divider-text{font-size:9px;letter-spacing:5px;color:#8A7A62;text-transform:uppercase;white-space:nowrap}
 
+    .search-wrap{padding:0 3rem;margin-bottom:2rem;display:flex;justify-content:center}
+    .search-box{position:relative;width:100%;max-width:420px}
+    .search-box input{
+      width:100%;
+      font-family:'DM Mono',monospace;
+      font-size:12px;
+      letter-spacing:1px;
+      color:#2A1F0E;
+      background:#EDE5D4;
+      border:1px solid #C9B99A;
+      padding:12px 16px 12px 38px;
+      outline:none;
+    }
+    .search-box input::placeholder{color:#A9966F}
+    .search-box input:focus{border-color:#8A7A62}
+    .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#8A7A62;pointer-events:none}
+    .no-results{display:none;text-align:center;font-size:12px;letter-spacing:1px;color:#8A7A62;padding:2rem 1rem;text-transform:uppercase}
+
+    .search-wrap{padding:0 3rem;margin-bottom:2rem;display:flex;justify-content:center}
+    .search-box{position:relative;width:100%;max-width:420px}
+    .search-box input{
+      width:100%;
+      font-family:'DM Mono',monospace;
+      font-size:12px;
+      letter-spacing:1px;
+      color:#2A1F0E;
+      background:#EDE5D4;
+      border:1px solid #C9B99A;
+      padding:12px 16px 12px 38px;
+      outline:none;
+    }
+    .search-box input::placeholder{color:#A9966F}
+    .search-box input:focus{border-color:#8A7A62}
+    .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#8A7A62;pointer-events:none}
+    .no-results{display:none;text-align:center;font-size:12px;letter-spacing:1px;color:#8A7A62;padding:2rem 1rem;text-transform:uppercase}
+
     .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #C9B99A;border-left:1px solid #C9B99A;margin:0 3rem 3rem}
 
     .card{border-right:1px solid #C9B99A;border-bottom:1px solid #C9B99A;background:#F7F2EA}
@@ -54,6 +90,8 @@
       .header{padding:1.2rem 1rem}
       .brand-name{font-size:1.8rem}
       .divider{padding:0 1rem;margin:1.2rem 0}
+      .search-wrap{padding:0 1rem}
+      .search-wrap{padding:0 1rem}
       .grid{grid-template-columns:1fr;margin:0 1rem 2rem}
       .thumb{aspect-ratio:4/3}
       .card-body{padding:1.2rem}
@@ -80,89 +118,15 @@
   <div class="divider-line"></div>
 </div>
 
-<div class="grid">
-
-  <div class="card">
-    <div class="thumb">
-      <img src="1.jpg" alt="Kaset Metallica">
-    </div>
-    <div class="card-body">
-      <div class="item-name">Kaset Metallica — Master of Puppets</div>
-      <div class="item-price">Rp 450.000</div>
-      <button class="desc-btn" onclick="toggle(this)">Lihat deskripsi</button>
-      <div class="desc-box">Kaset pita original era 80-an, kondisi baik dengan artwork asli. Label tercantum jelas, pita masih mulus diputar.<button class="close-btn" onclick="tutup(this)">Tutup deskripsi</button></div>
-      <a class="dm-btn" href="https://www.instagram.com/j2ndc_vintage_shop/" target="_blank">DM untuk beli</a>
-    </div>
+<div class="search-wrap">
+  <div class="search-box">
+    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="searchInput" placeholder="Cari nama produk..." oninput="cariProduk()">
   </div>
-
-  <div class="card">
-    <div class="thumb">
-      <img src="2.jpg" alt="Kamera Minolta">
-    </div>
-    <div class="card-body">
-      <div class="item-name">Kamera Analog Minolta X-700</div>
-      <div class="item-price">Rp 1.200.000</div>
-      <button class="desc-btn" onclick="toggle(this)">Lihat deskripsi</button>
-      <div class="desc-box">Kamera SLR 35mm ikonik dari tahun 1981. Rana berfungsi sempurna, cermin bersih, tanpa kebocoran cahaya.<button class="close-btn" onclick="tutup(this)">Tutup deskripsi</button></div>
-      <a class="dm-btn" href="https://www.instagram.com/j2ndc_vintage_shop/" target="_blank">DM untuk beli</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="thumb">
-      <img src="1.jpg" alt="Jaket Levi's">
-      <div class="sold-banner"><div class="sold-stamp">Terjual</div></div>
-    </div>
-    <div class="card-body">
-      <div class="item-name">Jaket Denim Vintage Levi's 507XX</div>
-      <div class="item-price">Rp 2.800.000</div>
-      <button class="desc-btn" onclick="toggle(this)">Lihat deskripsi</button>
-      <div class="desc-box">Trucker jacket Levi's era 70-an dengan fade alami. Size M, tidak ada tambalan atau sobekan.<button class="close-btn" onclick="tutup(this)">Tutup deskripsi</button></div>
-      <div class="sold-btn">Terjual</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="thumb">
-      <img src="2.jpg" alt="Seiko 5">
-    </div>
-    <div class="card-body">
-      <div class="item-name">Jam Tangan Seiko 5 Automatic</div>
-      <div class="item-price">Rp 850.000</div>
-      <button class="desc-btn" onclick="toggle(this)">Lihat deskripsi</button>
-      <div class="desc-box">Jam mekanis Seiko 5 produksi Jepang tahun 1985. Movement 7009A berjalan akurat, strap masih original.<button class="close-btn" onclick="tutup(this)">Tutup deskripsi</button></div>
-      <a class="dm-btn" href="https://www.instagram.com/j2ndc_vintage_shop/" target="_blank">DM untuk beli</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="thumb">
-      <img src="1.jpg" alt="Game Boy">
-      <div class="sold-banner"><div class="sold-stamp">Terjual</div></div>
-    </div>
-    <div class="card-body">
-      <div class="item-name">Konsol Game Boy Original Nintendo</div>
-      <div class="item-price">Rp 950.000</div>
-      <button class="desc-btn" onclick="toggle(this)">Lihat deskripsi</button>
-      <div class="desc-box">Game Boy DMG-01 asli tahun 1989. Layar mulus tanpa dead pixel, tombol responsif, baterai cover lengkap.<button class="close-btn" onclick="tutup(this)">Tutup deskripsi</button></div>
-      <div class="sold-btn">Terjual</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="thumb">
-      <img src="2.jpg" alt="Koin Benggol">
-    </div>
-    <div class="card-body">
-      <div class="item-name">Koin Kuno Benggol 2.5 Cent 1945</div>
-      <div class="item-price">Rp 380.000</div>
-      <button class="desc-btn" onclick="toggle(this)">Lihat deskripsi</button>
-      <div class="desc-box">Uang koin Hindia Belanda kondisi VF. Detail wajah Ratu Wilhelmina masih terlihat jelas di kedua sisi.<button class="close-btn" onclick="tutup(this)">Tutup deskripsi</button></div>
-      <a class="dm-btn" href="https://www.instagram.com/j2ndc_vintage_shop/" target="_blank">DM untuk beli</a>
-    </div>
-  </div>
-
 </div>
+
+<div class="grid" id="productGrid"></div>
+<div class="no-results" id="noResults">— Produk tidak ditemukan —</div>
 
 <div class="footer">
   <div class="footer-left">Yogyakarta, Indonesia</div>
@@ -170,15 +134,63 @@
 </div>
 
 <script>
-  function toggle(btn){
-    btn.nextElementSibling.classList.add('open');
-    btn.style.display='none';
+const IG = 'https://www.instagram.com/j2ndc_vintage_shop/';
+
+const products = [
+  {img:'1.jpg', name:'Kaset Metallica — Master of Puppets', price:'Rp 450.000', desc:'Kaset pita original era 80-an, kondisi baik dengan artwork asli. Label tercantum jelas, pita masih mulus diputar.', sold:false},
+  {img:'2.jpg', name:'Kamera Analog Minolta X-700', price:'Rp 1.200.000', desc:'Kamera SLR 35mm ikonik dari tahun 1981. Rana berfungsi sempurna, cermin bersih, tanpa kebocoran cahaya.', sold:false},
+  {img:'1.jpg', name:'Jaket Denim Vintage Levi\'s 507XX', price:'Rp 2.800.000', desc:'Trucker jacket Levi\'s era 70-an dengan fade alami. Size M, tidak ada tambalan atau sobekan.', sold:true},
+  {img:'2.jpg', name:'Jam Tangan Seiko 5 Automatic', price:'Rp 850.000', desc:'Jam mekanis Seiko 5 produksi Jepang tahun 1985. Movement 7009A berjalan akurat, strap masih original.', sold:false},
+  {img:'1.jpg', name:'Konsol Game Boy Original Nintendo', price:'Rp 950.000', desc:'Game Boy DMG-01 asli tahun 1989. Layar mulus tanpa dead pixel, tombol responsif, baterai cover lengkap.', sold:true},
+  {img:'2.jpg', name:'Koin Kuno Benggol 2.5 Cent 1945', price:'Rp 380.000', desc:'Uang koin Hindia Belanda kondisi VF. Detail wajah Ratu Wilhelmina masih terlihat jelas di kedua sisi.', sold:false}
+];
+
+function renderProducts(list){
+  const grid = document.getElementById('productGrid');
+  const noResults = document.getElementById('noResults');
+  if(list.length === 0){
+    grid.innerHTML = '';
+    noResults.style.display = 'block';
+    return;
   }
-  function tutup(btn){
-    const box=btn.closest('.desc-box');
-    box.classList.remove('open');
-    box.previousElementSibling.style.display='';
-  }
+  noResults.style.display = 'none';
+  grid.innerHTML = list.map(p => `
+    <div class="card">
+      <div class="thumb">
+        <img src="${p.img}" alt="${p.name}">
+        ${p.sold ? '<div class="sold-banner"><div class="sold-stamp">Terjual</div></div>' : ''}
+      </div>
+      <div class="card-body">
+        <div class="item-name">${p.name}</div>
+        <div class="item-price">${p.price}</div>
+        <button class="desc-btn" onclick="toggle(this)">Lihat deskripsi</button>
+        <div class="desc-box">${p.desc}<button class="close-btn" onclick="tutup(this)">Tutup deskripsi</button></div>
+        ${p.sold
+          ? '<div class="sold-btn">Terjual</div>'
+          : `<a class="dm-btn" href="${IG}" target="_blank">DM untuk beli</a>`
+        }
+      </div>
+    </div>
+  `).join('');
+}
+
+function cariProduk(){
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const filtered = products.filter(p => p.name.toLowerCase().includes(q));
+  renderProducts(filtered);
+}
+
+function toggle(btn){
+  btn.nextElementSibling.classList.add('open');
+  btn.style.display='none';
+}
+function tutup(btn){
+  const box=btn.closest('.desc-box');
+  box.classList.remove('open');
+  box.previousElementSibling.style.display='';
+}
+
+renderProducts(products);
 </script>
 
 </body>
