@@ -1,73 +1,67 @@
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-.wrap{font-family:'DM Mono',monospace;background:#F7F2EA;color:#2A1F0E}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J2NDC — Jogja Second Chance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Mono',monospace;background:#F7F2EA;color:#2A1F0E}
 
-.header{padding:2.5rem 3rem;border-bottom:1px solid #C9B99A;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.brand-name{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;letter-spacing:-1px;color:#2A1F0E;line-height:1}
-.brand-sub{font-size:10px;letter-spacing:4px;color:#8A7A62;text-transform:uppercase;margin-top:5px}
-.ig-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;color:#5C4A2A;text-decoration:none;border:1px solid #C9B99A;padding:10px 18px;background:#EDE5D4;text-transform:uppercase}
-.ig-link:hover{background:#DDD0BA}
+    .header{padding:2.5rem 3rem;border-bottom:1px solid #C9B99A;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .brand-name{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;letter-spacing:-1px;color:#2A1F0E;line-height:1}
+    .brand-sub{font-size:10px;letter-spacing:4px;color:#8A7A62;text-transform:uppercase;margin-top:5px}
+    .ig-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;color:#5C4A2A;text-decoration:none;border:1px solid #C9B99A;padding:10px 18px;background:#EDE5D4;text-transform:uppercase}
+    .ig-link:hover{background:#DDD0BA}
 
-.divider{display:flex;align-items:center;gap:16px;padding:0 3rem;margin:2rem 0}
-.divider-line{flex:1;height:1px;background:#C9B99A}
-.divider-text{font-size:9px;letter-spacing:5px;color:#8A7A62;text-transform:uppercase;white-space:nowrap}
+    .divider{display:flex;align-items:center;gap:16px;padding:0 3rem;margin:2rem 0}
+    .divider-line{flex:1;height:1px;background:#C9B99A}
+    .divider-text{font-size:9px;letter-spacing:5px;color:#8A7A62;text-transform:uppercase;white-space:nowrap}
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
-  border-top:1px solid #C9B99A;
-  border-left:1px solid #C9B99A;
-  margin:0 3rem 3rem;
-}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #C9B99A;border-left:1px solid #C9B99A;margin:0 3rem 3rem}
 
-.card{border-right:1px solid #C9B99A;border-bottom:1px solid #C9B99A;background:#F7F2EA}
+    .card{border-right:1px solid #C9B99A;border-bottom:1px solid #C9B99A;background:#F7F2EA}
 
-.thumb{
-  width:100%;aspect-ratio:1;
-  background:#EDE5D4;
-  display:flex;align-items:center;justify-content:center;
-  font-size:64px;
-  border-bottom:1px solid #C9B99A;
-  position:relative;
-  padding:2rem;
-}
-.sold-banner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(247,242,234,0.65)}
-.sold-stamp{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:#8A7A62;border:2px solid #8A7A62;padding:5px 16px;transform:rotate(-12deg)}
+    .thumb{width:100%;aspect-ratio:1;background:#EDE5D4;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #C9B99A;position:relative;overflow:hidden}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .sold-banner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(247,242,234,0.65)}
+    .sold-stamp{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:#8A7A62;border:2px solid #8A7A62;padding:5px 16px;transform:rotate(-12deg)}
 
-.card-body{padding:1.5rem}
-.item-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;line-height:1.45;margin-bottom:8px;color:#2A1F0E}
-.item-price{font-size:12px;letter-spacing:1px;color:#5C4A2A;margin-bottom:14px}
+    .card-body{padding:1.5rem}
+    .item-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;line-height:1.45;margin-bottom:8px;color:#2A1F0E}
+    .item-price{font-size:12px;letter-spacing:1px;color:#5C4A2A;margin-bottom:14px}
 
-.desc-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:#8A7A62;padding:0;margin-bottom:14px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
-.desc-btn:hover{color:#5C4A2A}
-.desc-btn::before{content:'';display:inline-block;width:12px;height:1px;background:currentColor}
+    .desc-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:#8A7A62;padding:0;margin-bottom:14px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
+    .desc-btn:hover{color:#5C4A2A}
+    .desc-btn::before{content:'';display:inline-block;width:12px;height:1px;background:currentColor}
 
-.desc-box{font-size:12px;line-height:1.8;color:#5C4A2A;margin-bottom:16px;padding:12px 14px;background:#EDE5D4;border-left:2px solid #C9B99A;display:none}
-.desc-box.open{display:block}
-.close-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:#8A7A62;padding:0;margin-top:10px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
-.close-btn:hover{color:#5C4A2A}
-.close-btn::before{content:'';display:inline-block;width:12px;height:1px;background:currentColor}
+    .desc-box{font-size:12px;line-height:1.8;color:#5C4A2A;margin-bottom:16px;padding:12px 14px;background:#EDE5D4;border-left:2px solid #C9B99A;display:none}
+    .desc-box.open{display:block}
+    .close-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:#8A7A62;padding:0;margin-top:10px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
+    .close-btn:hover{color:#5C4A2A}
+    .close-btn::before{content:'';display:inline-block;width:12px;height:1px;background:currentColor}
 
-.dm-btn{display:block;text-align:center;text-decoration:none;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:12px;border:1px solid #2A1F0E;color:#2A1F0E;background:transparent}
-.dm-btn:hover{background:#2A1F0E;color:#F7F2EA}
-.sold-btn{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:12px;border:1px solid #C9B99A;color:#8A7A62;cursor:default}
+    .dm-btn{display:block;text-align:center;text-decoration:none;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:12px;border:1px solid #2A1F0E;color:#2A1F0E;background:transparent}
+    .dm-btn:hover{background:#2A1F0E;color:#F7F2EA}
+    .sold-btn{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:12px;border:1px solid #C9B99A;color:#8A7A62;cursor:default}
 
-.footer{padding:1.5rem 3rem;border-top:1px solid #C9B99A;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.footer-left{font-size:9px;letter-spacing:3px;color:#8A7A62;text-transform:uppercase}
-.footer-right{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:#8A7A62}
+    .footer{padding:1.5rem 3rem;border-top:1px solid #C9B99A;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    .footer-left{font-size:9px;letter-spacing:3px;color:#8A7A62;text-transform:uppercase}
+    .footer-right{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:#8A7A62}
 
-@media(max-width:600px){
-  .header{padding:1.5rem}
-  .divider{padding:0 1.5rem;margin:1.5rem 0}
-  .grid{grid-template-columns:1fr;margin:0 1.5rem 2rem}
-  .thumb{font-size:80px;aspect-ratio:4/3}
-  .footer{padding:1.2rem 1.5rem}
-}
-</style>
-
-<div class="wrap">
+    @media(max-width:768px){
+      .header{padding:1.2rem 1rem}
+      .brand-name{font-size:1.8rem}
+      .divider{padding:0 1rem;margin:1.2rem 0}
+      .grid{grid-template-columns:1fr;margin:0 1rem 2rem}
+      .thumb{aspect-ratio:4/3}
+      .card-body{padding:1.2rem}
+      .footer{padding:1rem}
+    }
+  </style>
+</head>
+<body>
 
 <div class="header">
   <div>
@@ -90,7 +84,7 @@
 
   <div class="card">
     <div class="thumb">
-      <img src="1.jpg" alt="Kaset Metallica" style="width:100%;height:100%;object-fit:cover;">
+      <img src="1.jpg" alt="Kaset Metallica">
     </div>
     <div class="card-body">
       <div class="item-name">Kaset Metallica — Master of Puppets</div>
@@ -103,7 +97,7 @@
 
   <div class="card">
     <div class="thumb">
-      <img src="2.jpg" alt="Kaset Metallica" style="width:100%;height:100%;object-fit:cover;">
+      <img src="2.jpg" alt="Kamera Minolta">
     </div>
     <div class="card-body">
       <div class="item-name">Kamera Analog Minolta X-700</div>
@@ -116,7 +110,7 @@
 
   <div class="card">
     <div class="thumb">
-      <img src="1.jpg" alt="Jaket Levi's" style="width:100%;height:100%;object-fit:cover;">
+      <img src="3.jpg" alt="Jaket Levi's">
       <div class="sold-banner"><div class="sold-stamp">Terjual</div></div>
     </div>
     <div class="card-body">
@@ -130,7 +124,7 @@
 
   <div class="card">
     <div class="thumb">
-      <img src="2.jpg" alt="Kaset Metallica" style="width:100%;height:100%;object-fit:cover;">
+      <img src="4.jpg" alt="Seiko 5">
     </div>
     <div class="card-body">
       <div class="item-name">Jam Tangan Seiko 5 Automatic</div>
@@ -143,7 +137,7 @@
 
   <div class="card">
     <div class="thumb">
-      <img src="1.jpg" alt="Jaket Levi's" style="width:100%;height:100%;object-fit:cover;">
+      <img src="5.jpg" alt="Game Boy">
       <div class="sold-banner"><div class="sold-stamp">Terjual</div></div>
     </div>
     <div class="card-body">
@@ -157,7 +151,7 @@
 
   <div class="card">
     <div class="thumb">
-      <img src="2.jpg" alt="Kaset Metallica" style="width:100%;height:100%;object-fit:cover;">
+      <img src="6.jpg" alt="Koin Benggol">
     </div>
     <div class="card-body">
       <div class="item-name">Koin Kuno Benggol 2.5 Cent 1945</div>
@@ -175,16 +169,17 @@
   <div class="footer-right">Barang langka · Kesempatan kedua</div>
 </div>
 
-</div>
-
 <script>
-function toggle(btn){
-  btn.nextElementSibling.classList.add('open');
-  btn.style.display='none';
-}
-function tutup(btn){
-  const box=btn.closest('.desc-box');
-  box.classList.remove('open');
-  box.previousElementSibling.style.display='';
-}
+  function toggle(btn){
+    btn.nextElementSibling.classList.add('open');
+    btn.style.display='none';
+  }
+  function tutup(btn){
+    const box=btn.closest('.desc-box');
+    box.classList.remove('open');
+    box.previousElementSibling.style.display='';
+  }
 </script>
+
+</body>
+</html>
