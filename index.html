@@ -37,24 +37,6 @@
     .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#8A7A62;pointer-events:none}
     .no-results{display:none;text-align:center;font-size:12px;letter-spacing:1px;color:#8A7A62;padding:2rem 1rem;text-transform:uppercase}
 
-    .search-wrap{padding:0 3rem;margin-bottom:2rem;display:flex;justify-content:center}
-    .search-box{position:relative;width:100%;max-width:420px}
-    .search-box input{
-      width:100%;
-      font-family:'DM Mono',monospace;
-      font-size:12px;
-      letter-spacing:1px;
-      color:#2A1F0E;
-      background:#EDE5D4;
-      border:1px solid #C9B99A;
-      padding:12px 16px 12px 38px;
-      outline:none;
-    }
-    .search-box input::placeholder{color:#A9966F}
-    .search-box input:focus{border-color:#8A7A62}
-    .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#8A7A62;pointer-events:none}
-    .no-results{display:none;text-align:center;font-size:12px;letter-spacing:1px;color:#8A7A62;padding:2rem 1rem;text-transform:uppercase}
-
     .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #C9B99A;border-left:1px solid #C9B99A;margin:0 3rem 3rem}
 
     .card{border-right:1px solid #C9B99A;border-bottom:1px solid #C9B99A;background:#F7F2EA}
@@ -90,7 +72,6 @@
       .header{padding:1.2rem 1rem}
       .brand-name{font-size:1.8rem}
       .divider{padding:0 1rem;margin:1.2rem 0}
-      .search-wrap{padding:0 1rem}
       .search-wrap{padding:0 1rem}
       .grid{grid-template-columns:1fr;margin:0 1rem 2rem}
       .thumb{aspect-ratio:4/3}
@@ -134,15 +115,13 @@
 </div>
 
 <script>
-const IG = 'https://www.instagram.com/ramasproperties';
-
 const products = [
-  {img:'1.jpg', name:'Kaset Metallica — Master of Puppets', price:'Rp 450.000', desc:'Kaset pita original era 80-an, kondisi baik dengan artwork asli. Label tercantum jelas, pita masih mulus diputar.', sold:false},
-  {img:'2.jpg', name:'Kamera Analog Minolta X-700', price:'Rp 1.200.000', desc:'Kamera SLR 35mm ikonik dari tahun 1981. Rana berfungsi sempurna, cermin bersih, tanpa kebocoran cahaya.', sold:false},
-  {img:'1.jpg', name:'Jaket Denim Vintage Levi\'s 507XX', price:'Rp 2.800.000', desc:'Trucker jacket Levi\'s era 70-an dengan fade alami. Size M, tidak ada tambalan atau sobekan.', sold:true},
-  {img:'2.jpg', name:'Jam Tangan Seiko 5 Automatic', price:'Rp 850.000', desc:'Jam mekanis Seiko 5 produksi Jepang tahun 1985. Movement 7009A berjalan akurat, strap masih original.', sold:false},
-  {img:'1.jpg', name:'Konsol Game Boy Original Nintendo', price:'Rp 950.000', desc:'Game Boy DMG-01 asli tahun 1989. Layar mulus tanpa dead pixel, tombol responsif, baterai cover lengkap.', sold:true},
-  {img:'2.jpg', name:'Koin Kuno Benggol 2.5 Cent 1945', price:'Rp 380.000', desc:'Uang koin Hindia Belanda kondisi VF. Detail wajah Ratu Wilhelmina masih terlihat jelas di kedua sisi.', sold:false}
+  {img:'1.jpg', name:'Kaset Metallica — Master of Puppets', price:'Rp 450.000', desc:'Kaset pita original era 80-an, kondisi baik dengan artwork asli. Label tercantum jelas, pita masih mulus diputar.', sold:false, link:'https://www.instagram.com/p/DaKyn04j2mG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='},
+  {img:'2.jpg', name:'Kamera Analog Minolta X-700', price:'Rp 1.200.000', desc:'Kamera SLR 35mm ikonik dari tahun 1981. Rana berfungsi sempurna, cermin bersih, tanpa kebocoran cahaya.', sold:false, link:'https://www.instagram.com/p/DaKyn04j2mG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='},
+  {img:'1.jpg', name:'Jaket Denim Vintage Levi\'s 507XX', price:'Rp 2.800.000', desc:'Trucker jacket Levi\'s era 70-an dengan fade alami. Size M, tidak ada tambalan atau sobekan.', sold:true, link:'https://www.instagram.com/p/DaKyn04j2mG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='},
+  {img:'2.jpg', name:'Jam Tangan Seiko 5 Automatic', price:'Rp 850.000', desc:'Jam mekanis Seiko 5 produksi Jepang tahun 1985. Movement 7009A berjalan akurat, strap masih original.', sold:false, link:'https://www.instagram.com/p/DaKyn04j2mG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='},
+  {img:'1.jpg', name:'Konsol Game Boy Original Nintendo', price:'Rp 950.000', desc:'Game Boy DMG-01 asli tahun 1989. Layar mulus tanpa dead pixel, tombol responsif, baterai cover lengkap.', sold:true, link:'https://www.instagram.com/p/DaKyn04j2mG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='},
+  {img:'2.jpg', name:'Koin Kuno Benggol 2.5 Cent 1945', price:'Rp 380.000', desc:'Uang koin Hindia Belanda kondisi VF. Detail wajah Ratu Wilhelmina masih terlihat jelas di kedua sisi.', sold:false, link:'https://www.instagram.com/p/DaKyn04j2mG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='}
 ];
 
 function renderProducts(list){
@@ -167,7 +146,7 @@ function renderProducts(list){
         <div class="desc-box">${p.desc}<button class="close-btn" onclick="tutup(this)">Tutup deskripsi</button></div>
         ${p.sold
           ? '<div class="sold-btn">Terjual</div>'
-          : `<a class="dm-btn" href="${IG}" target="_blank">DM untuk beli</a>`
+          : `<a class="dm-btn" href="${p.link}" target="_blank">Dokumentasi</a>`
         }
       </div>
     </div>
